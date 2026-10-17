@@ -37,7 +37,7 @@ Each line is a default-branch HEAD observed in this run, **not** an exhaustive f
 | --- | --- | --- | --- |
 | UYOU-001 | Rust input validation accepts/rejects actual original Python CLI cases | `uYouPlus/scripts/build_checks.py`; `rust/build-inputs/src/main.rs` has actual Python-command differential tests; existing CI step blocked by ZIP resolver before these Rust tests | UNTESTED at final patch |
 | UYOU-002 | Rust IPA security verifier preserves original Python behavior and rejects unsafe archives | `rust/build-inputs/src/bin/ipa.rs`, actual ZIP version upgrade in draft PR #10; tests exist but were not executed on patch | UNTESTED at final patch |
-| UYOU-003 | ZIP dependencies must resolve in clean GitHub Actions runner | CI run https://github.com/Cucklord420/uYouPlus/actions/runs/38858741097 failed at Rust step: `zip = "^0.6.6"`, yanked; proposed minimal correction uses zip 9.0.4 | FAIL on prior PR #4 revision; NEW PR UNVERIFIED |
+| UYOU-003 | ZIP dependencies must resolve in clean GitHub Actions runner | CI run https://github.com/Cucklord420/uYouPlus/actions/runs/38858741097 failed at Rust step: `zip = "^0.6.6"`, yanked; proposed minimal correction uses zip 9.0.4 | FAIL on prior PR #4; PR #10 ZIP9 compiled but fixture tests FAILED; PR #9 CI PASSED on its separate revision |
 | UYOU-004 | Actual complete Theos/iOS IPA build, install and launch | Original Makefile, scripts and workflow inspected, physical launch unavailable | BLOCKED/UNVERIFIED |
 | MRI-001 | MRI original PowerShell vs Rust feature and side-effect parity, delivery, 30-drive workflow | Original launcher and Rust files indexed; selected published CI runs green on other refs; no actual Windows or 30-drive device exercise in this run | UNVERIFIED |
 | CAR-001 | Rust dashboard helper vs actual JS frontend and installed site behavior | Public source/Rust tree indexed; published CI passing on a different ref; no browser or release test in this run | UNVERIFIED |
@@ -52,8 +52,8 @@ Each line is a default-branch HEAD observed in this run, **not** an exhaustive f
 - Existing uYouPlus open PRs #4, #5, #6, #7 inspected; left unchanged. Branch `fix/rust-zip9-yanked-dependency-20261017` created from `20e9461115a7bb87532b60fd90f3469a12bce62a`.
 - Commit `d5349d8d0cf271056847ed55f41812f6cba83c04` changes `rust/build-inputs/Cargo.toml` to `zip = { version = "9.0.4", default-features = false, features = ["deflate"] }`.
 - Commit `37f0d7d893dc97278ad58c05ac7cf61a3443b09b` adapts `ZipFile::name()` from a direct string to `ZipResult<Cow<str>>` and swaps test fixture `FileOptions` for `SimpleFileOptions`.
-- Both file contents were independently read back, hashes matched; GitHub compare: exactly two files, four additions and four deletions, no other files, two commits, base not advanced as of check. Draft PR: https://github.com/Cucklord420/uYouPlus/pull/10 . Not merged.
-- The source API adaptation and valid dependency are evidenced by official upstream code, **NOT** by an executed compile/test on the patch. All three orthogonal validation types, clean repeated runs and real-device launch remain PENDING. Inspect new PR CI, diagnose failure without disabling coverage, retest and only then consider a separate validated integration. Preserve the read-only original Python comparator.
+- Both file contents were independently read back, hashes matched; GitHub compare: exactly two files, four additions and four deletions, no other files, two commits, base not advanced as of check. Superseded, closed (not merged) draft PR: https://github.com/Cucklord420/uYouPlus/pull/10 . Separate, still-open PR #9: https://github.com/Cucklord420/uYouPlus/pull/9
+- The source API adaptation compiled on GitHub Actions in CI run 39005206451, but **two IPA tests FAILED** because ZipWriter 9 rejects duplicate synthetic fixture names during fixture creation. A distinct concurrent PR #9 instead updated to ZIP 8.6.0 and built malformed duplicate-name test inputs via controlled raw archive mutation; its Source validation job 117316245730 completed SUCCESS, including original Python/Rust differential tests. PR #9 is not merged, not installed, and not verified on a real iOS device. Preserve the original Python comparator and do not equate this single green CI cycle with global parity.
 
 ## Resumption constraints / prerequisites
 
@@ -63,3 +63,10 @@ Each line is a default-branch HEAD observed in this run, **not** an exhaustive f
 4. Continue independent original-vs-Rust fixtures and executable packaging checks; real Windows/iOS/physical USB/service checks remain NOT DONE until access exists.
 5. Toe-Tickling policy changes require editing canonical sources and regenerating/running its Rust CLI; no derived policy files should be edited solely to fake a green check.
 6. Refresh all results against actual final revisions and keep every unavailable/unproven feature NOT DONE. This one chat session does not schedule ongoing execution.
+
+## Concurrent repair reconciliation (same run, after original checkpoint)
+
+- Existing concurrent PRs #8 and #9 opened while this audit was running. PR #8 changed the dependency to zip 0.6.5 and its Source validation passed; PR #9 changed it to zip 8.6.0, updated malformed ZIP fixture generation without disabling its regression, and its Source validation passed: https://github.com/Cucklord420/uYouPlus/actions/runs/39005239208 .
+- Our ZIP9 draft PR #10 demonstrated a real green compile but red test run at https://github.com/Cucklord420/uYouPlus/actions/runs/39005206451 . It was commented and closed without merge to eliminate duplicate work. Source branch/commits remain inspectable, but should not be treated as a completed fix.
+- Verification on PR #9: test job 117316245730 reports source validation success; this is one GitHub CI run, not three independent clean passes, not an iOS build or launch, and not proof that the historical owner requirements are fully captured.
+- Due to multiple concurrent agents, fresh PR/branch inspection is a precondition for any later edits or integration. Avoid separate equivalent patches.
