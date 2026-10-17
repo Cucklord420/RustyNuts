@@ -52,7 +52,7 @@ Each line is a default-branch HEAD observed in this run, **not** an exhaustive f
 - Existing uYouPlus open PRs #4, #5, #6, #7 inspected; left unchanged. Branch `fix/rust-zip9-yanked-dependency-20261017` created from `20e9461115a7bb87532b60fd90f3469a12bce62a`.
 - Commit `d5349d8d0cf271056847ed55f41812f6cba83c04` changes `rust/build-inputs/Cargo.toml` to `zip = { version = "9.0.4", default-features = false, features = ["deflate"] }`.
 - Commit `37f0d7d893dc97278ad58c05ac7cf61a3443b09b` adapts `ZipFile::name()` from a direct string to `ZipResult<Cow<str>>` and swaps test fixture `FileOptions` for `SimpleFileOptions`.
-- Both file contents were independently read back, hashes matched; GitHub compare: exactly two files, six additions and six deletions, no other files, two commits, base not advanced as of check. Draft PR: https://github.com/Cucklord420/uYouPlus/pull/10 . Not merged.
+- Both file contents were independently read back, hashes matched; GitHub compare: exactly two files, four additions and four deletions, no other files, two commits, base not advanced as of check. Draft PR: https://github.com/Cucklord420/uYouPlus/pull/10 . Not merged.
 - The source API adaptation and valid dependency are evidenced by official upstream code, **NOT** by an executed compile/test on the patch. All three orthogonal validation types, clean repeated runs and real-device launch remain PENDING. Inspect new PR CI, diagnose failure without disabling coverage, retest and only then consider a separate validated integration. Preserve the read-only original Python comparator.
 
 ## Resumption constraints / prerequisites
