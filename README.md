@@ -9,3 +9,5 @@ Governing guidebook: [Toe-Tickling](https://github.com/Cucklord420/Toe-Tickling)
 Luna must independently repeat compilation, behavior, regression, adversarial and real-artifact checks; preserve evidence and checkpoints; fix recoverable tool and environment problems rather than stopping; and never fabricate files, test passes or completion.
 
 **DONE** requires verified fulfillment of every applicable requirement and intended port's one-to-one behavioral parity. Genuine inaccessible permissions, hardware, services, safety limits or missing evidence remain **NOT DONE — BLOCKED**, while independent authorized work continues. Reading this repository does not itself activate an autonomous runner or prove deployment.
+
+Resume from the [private, evidence-scoped audit ledger](AUDIT-LEDGER.md) after reloading the current GOAL.md, guidebook, source revisions and GitHub CI. The ledger records incomplete coverage and blockers; it is not a completion certificate.
