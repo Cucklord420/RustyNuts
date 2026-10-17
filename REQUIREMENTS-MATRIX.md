@@ -49,7 +49,7 @@ No test in this session erased or wrote a physical USB. Existing partial Rust he
 | MONEY-08 | Every comparison or planned purchase exposes total cost of ownership and cash floors | Spec acceptance #7, dashboard and goals view | CURRENT SPEC, application UNVERIFIED |
 | MONEY-09 | Export is sanitized; no actual account/transaction/raw credentials in repo or debug logs | AGENTS + negative fixture guarding; privacy review before any release | CURRENT SPEC, candidate guard CI only |
 | MONEY-10 | No live money movement, autonomous trading, tax filing, bank credentials or estimates passed off as verified | Non-goals in PRODUCT_SPEC; negative integration checks | CURRENT SPEC, NEGATIVE REQUIREMENT UNVERIFIED |
-| MONEY-11 | Data interface choice not yet settled: Excel, Sheets or local web app; don't invent chosen backend | ROADMAP Phase 1 explicitly undecided | OPEN PRODUCT DECISION, not an engineering PASS |
+| MONEY-11 | The referenced ROADMAP lists Excel, Sheets and local web app as alternatives; verify whether a later owner decision superseded this before selecting a backend | ROADMAP Phase 1 explicitly undecided | CURRENT CHOICE UNVERIFIED; do not infer no later decision |
 
 The repository's present Rust source provides guards and fictional fixture checks; **there is no evidenced full installed finance tracker**.
 
