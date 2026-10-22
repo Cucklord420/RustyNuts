@@ -1,6 +1,6 @@
 # RustyNuts resumable audit delta — 10-17-2026
 
-**Status: NOT DONE / PARTIAL.** Private connected-GitHub task record. This is a supplement to the existing `AUDIT-CHECKPOINT-2026-10-17.md`, not a replacement. No background execution or whole-repository feature parity is claimed.
+**Status: NOT DONE / PARTIAL.** Public, limited connected-GitHub audit checkpoint; not a private evidence store. This is a supplement to the existing `AUDIT-CHECKPOINT-2026-10-17.md`, not a replacement. No background execution or whole-repository feature parity is claimed.
 
 ## Authority, current baseline and scope
 
@@ -35,6 +35,6 @@
 - Verify exact current branch heads and overlapping PR statuses before every further edit. PR #8 and PR #9 solve the same initial symptom in different ways; no implicit merge authorization or clean-head claim.
 - More exhaustive original-vs-Rust differential fixtures, failed/partial ZIP handling, fuzzing, format/Clippy, release packaging, physical iOS install/launch, and original iOS functionality remain open. Do not count a passing Rust helper as one-to-one parity for the complete application.
 - Other independent projects: historical owner requirements/issues/history, initial build/oracle, final-revision CI and hardware/supported-platform checks still to be examined and traced. The prior inventory is a snapshot, not proof of completion.
-- The private checkpoint and this delta constitute verified remote writes only if they remain readable at the stated path. Neither is a live scheduler or an authorization to rewrite third-party upstream projects.
+- The public checkpoint and this delta are remote source records only if they remain readable at the stated paths; they must not contain non-public evidence. Neither is a live scheduler or an authorization to rewrite third-party upstream projects.
 
 **Review condition:** mark global `NOT DONE` until every applicable requirement has independent original oracle, implementation, fully verified real-user workflow, reproducible tests, final-head CI, and historical provenance with no unknown or blocked applicable row.
