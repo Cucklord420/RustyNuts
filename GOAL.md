@@ -80,6 +80,12 @@ For every failed tool call, check, fetch, compile, PR/CI run, test or dependency
 
 Do not stop because time, context or model competence is low; checkpoint accurately and use available recurring goal invocations to resume. Do not claim continued execution if the goal runner is not actually active. If work stalls globally due solely to a recoverable technical fault, create a concrete next diagnostic experiment rather than reclassifying the entire mission as completed or abandoning it.
 
+## 4B. Superpowers workflow companion (runtime-dependent)
+
+When the current agent actually has access to the Superpowers skills, read and use the applicable process mapping in [docs/SUPERPOWERS-WORKFLOW.md](docs/SUPERPOWERS-WORKFLOW.md) alongside this goal and the full current Toe-Tickling guidebook. Discover and invoke real available skills rather than inferring their presence from a repository link. Preserve the skills' relevant design/approval, isolation, test-first, systematic-debugging, review and verification gates without weakening this goal's stricter original-to-Rust parity and artifact-delivery requirements. Where a particular design action needs fresh approval, continue independent authorized work instead of inventing authorization or a green status.
+
+This companion is not a new global policy and does not install skills in Codex or an autonomous runner. Do not add artificial test passes for this specification-only repository, confuse an unmerged PR with production delivery, or claim that Superpowers activation completes cross-repository Rust migrations.
+
 ## 5. Comprehensive Rust correctness review
 
 Audit ownership/lifetimes/borrowing, allocations and cloning, API signatures, error propagation/context, Option/Result usage, panic behavior, integer overflow, parsing and deserialization, bounded resource use, state machines/invariants, IO, paths/symlinks, cancellation, locking, async/thread interactions, races/deadlocks, platform assumptions, soundness and FFI. Prefer idiomatic safe Rust; minimize unnecessary abstractions, macros, shared mutable state, blocking and dependencies. Unsafe requires explicit documented invariants/SAFETY justification and independent review plus targeted soundness tests where supported. Audit all surrounding code that maintains unsafe invariants.
