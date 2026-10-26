@@ -6,6 +6,8 @@ Persistent, comprehensive Codex goal: **verified one-to-one Rust port parity, al
 
 Governing guidebook: [Toe-Tickling](https://github.com/Cucklord420/Toe-Tickling), starting from its current [AGENTS.md](https://github.com/Cucklord420/Toe-Tickling/blob/main/AGENTS.md).
 
+Superpowers process companion: [docs/SUPERPOWERS-WORKFLOW.md](docs/SUPERPOWERS-WORKFLOW.md) maps available brainstorming, planning, TDD, debugging, isolation, review, and verification skills onto the goal's stricter parity and evidence gates. A repository link alone does not install or activate those skills in another runtime.
+
 Luna must independently repeat compilation, behavior, regression, adversarial and real-artifact checks; preserve evidence and checkpoints; fix recoverable tool and environment problems rather than stopping; and never fabricate files, test passes or completion.
 
 **DONE** requires verified fulfillment of every applicable requirement and intended port's one-to-one behavioral parity. Genuine inaccessible permissions, hardware, services, safety limits or missing evidence remain **NOT DONE — BLOCKED**, while independent authorized work continues. Reading this repository does not itself activate an autonomous runner or prove deployment.
